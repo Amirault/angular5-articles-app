@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Article} from "../models/article";
+import {ArticleService} from "../services/article.service";
 
 @Component({
   selector: 'app-articles',
@@ -8,23 +9,11 @@ import {Article} from "../models/article";
 })
 export class ArticlesComponent implements OnInit {
 
-  constructor() {
+  constructor(private articleService: ArticleService) {
   }
 
   articles(): Article[] {
-    return [{
-      title: 'My First Article',
-      content: 'Hello World',
-      authors: 'Orangefire'
-    }, {
-      title: 'Angular component',
-      content: 'Angular component looks awesome!',
-      authors: 'Orangefire'
-    }, {
-      title: 'Angular service',
-      content: 'I read something about angular service, i will try it soon',
-      authors: 'Orangefire'
-    }];
+    return this.articleService.getArticles();
   }
 
   ngOnInit() {
