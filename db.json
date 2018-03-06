@@ -1,0 +1,16 @@
+{
+  "articles": [
+    {
+      "id": 1,
+      "title": "Angular component",
+      "content": "Angular component looks awesome!",
+      "authors": "Orangefire"
+    },
+    {
+      "id": 2,
+      "title": "Angular service",
+      "content": "I read something about angular service, i will try it soon",
+      "authors": "Orangefire"
+    }
+  ]
+}
