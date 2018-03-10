@@ -1,6 +1,12 @@
 {
   "articles": [
     {
+      "id": 0,
+      "title": "My First Article",
+      "content": "Hello World",
+      "authors": "Orangefire"
+    },
+    {
       "id": 1,
       "title": "Angular component",
       "content": "Angular component looks awesome!",

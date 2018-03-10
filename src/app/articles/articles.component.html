@@ -1,4 +1,3 @@
 <div *ngFor="let article of this.articles() | async">
-  <app-article  [article]="article"></app-article>
-  <button (click)="this.delete(article.id)">Remove</button>
+  <app-article  [article]="article" (deletedArticle)="delete($event)"></app-article>
 </div>

@@ -23,8 +23,8 @@ export class ArticlesComponent implements OnInit {
     this._articles = this.articleService.get();
   }
 
-  delete(id : number){
-    this.articleService.delete(id).subscribe(()=>{
+  delete(article: Article){
+    this.articleService.delete(article.id).subscribe(()=>{
       this._articles = this.articleService.get();
     });
   }
