@@ -29,4 +29,8 @@ export class ArticlesComponent implements OnInit {
     });
   }
 
+  newArticle(article: Article){
+    this._articles = this.articleService.get();
+  }
+
 }
