@@ -1,5 +1,3 @@
-<app-article-creation (newArticle)="newArticle($event)"></app-article-creation>
-<hr/>
 <div *ngFor="let article of this.articles() | async">
   <app-article  [article]="article" (deletedArticle)="delete($event)"></app-article>
 </div>

@@ -13,9 +13,6 @@ export class ArticleCreationComponent implements OnInit {
 
   articleForm : FormGroup;
 
-  @Output()
-  newArticle : EventEmitter<RawArticle> = new EventEmitter();
-
   constructor(private fb: FormBuilder, private articleService : ArticleService) {
     this.articleForm = this.fb.group({
       title: ['Fake Title', Validators.required ],
@@ -34,6 +31,6 @@ export class ArticleCreationComponent implements OnInit {
       content : formModel.content,
       authors : formModel.authors
     }
-    this.articleService.add(rawArticle).subscribe((article) => this.newArticle.emit(article));
+    this.articleService.add(rawArticle).subscribe();
   }
 }
