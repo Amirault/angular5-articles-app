@@ -3,7 +3,7 @@ import {Article} from '../models/article';
 import { EventEmitter } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {ArticleService} from "../services/article.service";
-import {Observable} from "rxjs/Observable";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-article',
