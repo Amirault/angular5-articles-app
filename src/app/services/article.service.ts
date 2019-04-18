@@ -7,20 +7,18 @@ import {RawArticle} from "../models/raw-article";
 @Injectable()
 export class ArticleService {
 
-  private _article : Observable<Article[]>;
-
-  constructor(private http : HttpClient) {
+  constructor(private http: HttpClient) {
   }
 
   public getAll(): Observable<Article[]> {
     return this.http.get<Article[]>("http://localhost:3000/articles");
   }
 
-  public get(id:number): Observable<Article> {
+  public get(id: number): Observable<Article> {
     return this.http.get<Article>(`http://localhost:3000/articles/${id}`);
   }
 
-  public delete(id:number): Observable<any> {
+  public delete(id: number): Observable<any> {
     return this.http.delete<any>(`http://localhost:3000/articles/${id}`);
   }
 

@@ -10,27 +10,19 @@ import {Observable} from "rxjs";
 })
 export class ArticlesComponent implements OnInit {
 
-  private _articles : Observable<Article[]>;
+  private articles: Article[];
 
   constructor(private articleService: ArticleService) {
   }
 
-  articles(): Observable<Article[]> {
-    return this._articles;
-  }
-
   ngOnInit() {
-    this._articles = this.articleService.getAll();
+     this.articleService.getAll().subscribe(articles  => this.articles = articles);
   }
 
-  delete(article: Article){
-    this.articleService.delete(article.id).subscribe(()=>{
-      this._articles = this.articleService.getAll();
+  delete(article: Article) {
+    this.articleService.delete(article.id).subscribe(() => {
+      this.articleService.getAll().subscribe(articles  => this.articles = articles);
     });
-  }
-
-  newArticle(article: Article){
-    this._articles = this.articleService.getAll();
   }
 
 }
