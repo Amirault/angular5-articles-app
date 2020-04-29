@@ -1,12 +1,7 @@
-export interface Article {
-  id: number;
-  title: string;
-  content: string;
-  authors: string;
-}
+export type Article = RawArticle & { id: number };
 
-export interface RawArticle {
+export type RawArticle = {
   title: string;
   content: string;
   authors: string;
-}
+};

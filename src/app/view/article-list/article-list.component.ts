@@ -9,19 +9,15 @@ import { ArticleUseCases } from "../../core/article/article.usecases";
 export class ArticleListComponent implements OnInit {
   articles: Article[];
 
-  constructor(private articleService: ArticleUseCases) {}
+  constructor(private articleUseCases: ArticleUseCases) {}
 
   ngOnInit() {
-    this.articleService
-      .readAll()
-      .subscribe((articles) => (this.articles = articles));
+    this.articleUseCases.readAll().subscribe((_) => (this.articles = _));
   }
 
-  delete(article: Article) {
-    this.articleService.delete(article.id).subscribe(() => {
-      this.articleService
-        .readAll()
-        .subscribe((articles) => (this.articles = articles));
+  delete({ id }: Article) {
+    this.articleUseCases.delete(id).subscribe(() => {
+      this.articleUseCases.readAll().subscribe((_) => (this.articles = _));
     });
   }
 }

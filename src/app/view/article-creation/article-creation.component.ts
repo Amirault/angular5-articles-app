@@ -11,7 +11,7 @@ export class ArticleCreationComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private articleService: ArticleUseCases
+    private articleUseCases: ArticleUseCases
   ) {
     this.articleForm = this.fb.group({
       title: ["Fake Title", Validators.required],
@@ -29,6 +29,6 @@ export class ArticleCreationComponent implements OnInit {
       content: formModel.content,
       authors: formModel.authors,
     };
-    this.articleService.create(rawArticle).subscribe();
+    this.articleUseCases.create(rawArticle).subscribe();
   }
 }
