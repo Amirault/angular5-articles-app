@@ -6,6 +6,7 @@
     "ng": "ng",
     "start": "ng serve & json-server db.json",
     "build": "ng build --prod",
+    "prettify": "prettier --write \"src/**/*.ts\"",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

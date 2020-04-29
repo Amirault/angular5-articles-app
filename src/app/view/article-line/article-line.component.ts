@@ -5,7 +5,7 @@ import { ArticleUseCases } from "../../core/article/article.usecases";
 
 @Component({
   selector: "app-article",
-  templateUrl: "./article-line.component.html"
+  templateUrl: "./article-line.component.html",
 })
 export class ArticleLineComponent implements OnInit {
   @Input()
@@ -17,11 +17,11 @@ export class ArticleLineComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.route.params.subscribe(params => {
+    this.route.params.subscribe((params) => {
       if (params && params["id"]) {
         this.articleService
           .read(params["id"])
-          .subscribe(article => (this.article = article));
+          .subscribe((article) => (this.article = article));
       }
     });
   }
