@@ -10,7 +10,7 @@ import {Observable} from "rxjs";
 })
 export class ArticlesComponent implements OnInit {
 
-  private articles: Article[];
+  articles: Article[];
 
   constructor(private articleService: ArticleService) {
   }
