@@ -1,7 +1,7 @@
-import {Injectable} from '@angular/core';
-import {Article, RawArticle} from './article.entity';
-import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import { Injectable } from "@angular/core";
+import { Article, RawArticle } from "./article.entity";
+import { HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs";
 
 @Injectable()
 export class ArticleUseCases {
