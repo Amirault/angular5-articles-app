@@ -1,0 +1,6 @@
+<div *ngFor="let article of this.articles">
+  <div class="jumbotron">
+    <app-article [article]="article"></app-article>
+    <button class="btn btn-sm btn-primary" (click)="delete(article)">X</button>
+  </div>
+</div>

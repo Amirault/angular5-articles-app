@@ -1,3 +1,10 @@
 {
-  "articles": []
+  "articles": [
+    {
+      "title": "Fake Title",
+      "content": "ez",
+      "authors": "ze",
+      "id": 1
+    }
+  ]
 }

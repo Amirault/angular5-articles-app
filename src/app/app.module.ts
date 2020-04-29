@@ -1,28 +1,30 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
-import { RouterModule, Routes } from '@angular/router';
+import {ReactiveFormsModule} from '@angular/forms';
+import {RouterModule, Routes} from '@angular/router';
 
-import { AppComponent } from './app.component';
-import { ArticleComponent } from './article/article.component';
-import { ArticlesComponent } from './articles/articles.component';
-import {ArticleService} from "./services/article.service";
-import { ArticleCreationComponent } from './article-creation/article-creation.component';
+import {AppComponent} from './app.component';
+import {ArticleLineComponent} from './view/article-line/article-line.component';
+import {ArticleListComponent} from './view/article-list/article-list.component';
+import {ArticleUseCases} from './core/article/article.usecases';
+import {ArticleCreationComponent} from './view/article-creation/article-creation.component';
+import {MenuComponent} from './view/menu/menu.component';
 
 const appRoutes: Routes = [
-  { path: 'create', component: ArticleCreationComponent },
-  { path: 'articles', component: ArticlesComponent },
-  { path: 'articles/:id', component: ArticleComponent },
-  { path: '', component: ArticlesComponent }
-]
+  { path: "create", component: ArticleCreationComponent },
+  { path: "articles", component: ArticleListComponent },
+  { path: "articles/:id", component: ArticleLineComponent },
+  { path: "", component: ArticleListComponent }
+];
 
 @NgModule({
   declarations: [
     AppComponent,
-    ArticleComponent,
-    ArticlesComponent,
-    ArticleCreationComponent
+    ArticleLineComponent,
+    ArticleListComponent,
+    ArticleCreationComponent,
+    MenuComponent
   ],
   imports: [
     RouterModule.forRoot(
@@ -33,7 +35,7 @@ const appRoutes: Routes = [
     HttpClientModule,
     ReactiveFormsModule
   ],
-  providers: [ArticleService],
+  providers: [ArticleUseCases],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

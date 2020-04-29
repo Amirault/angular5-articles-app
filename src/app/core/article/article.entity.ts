@@ -4,3 +4,9 @@ export interface Article {
   content: string;
   authors: string;
 }
+
+export interface RawArticle {
+  title: string;
+  content: string;
+  authors: string;
+}
