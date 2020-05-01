@@ -1,0 +1,16 @@
+name: Build and Deploy
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Angular Deploy gh-pages Actions
+      uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.2.0
+      with:
+        github_access_token: ${{ secrets.ACCESS_TOKEN }}
+        build_folder: dist
+        base_href: /angular5-articles-app/
