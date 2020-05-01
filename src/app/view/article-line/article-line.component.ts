@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from "@angular/core";
-import { Article } from "../../core/article/article.entity";
+import { Article } from "../../core/article/domain/article.entity";
 import { ActivatedRoute, Params } from "@angular/router";
-import { ArticleUseCases } from "../../core/article/article.usecases";
+import { ArticleUseCases } from "../../core/article/domain/article.usecases";
 
 @Component({
   selector: "app-article",

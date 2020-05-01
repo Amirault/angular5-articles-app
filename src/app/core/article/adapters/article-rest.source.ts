@@ -1,10 +1,11 @@
 import { Injectable } from "@angular/core";
-import { Article, RawArticle } from "./article.entity";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
+import { ArticleSource } from "../domain/article.source";
+import { Article, RawArticle } from "../domain/article.entity";
 
 @Injectable()
-export class ArticleUseCases {
+export class ArticleRestSource implements ArticleSource {
   constructor(private http: HttpClient) {}
 
   public create(newArticle: RawArticle): Observable<Article> {

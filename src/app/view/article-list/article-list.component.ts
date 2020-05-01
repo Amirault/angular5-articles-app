@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { Article } from "../../core/article/article.entity";
-import { ArticleUseCases } from "../../core/article/article.usecases";
+import { Article } from "../../core/article/domain/article.entity";
+import { ArticleUseCases } from "../../core/article/domain/article.usecases";
 
 @Component({
   selector: "app-articles",

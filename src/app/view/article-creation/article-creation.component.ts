@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { ArticleUseCases } from "../../core/article/article.usecases";
+import { ArticleUseCases } from "../../core/article/domain/article.usecases";
 
 @Component({
   selector: "app-article-creation",
