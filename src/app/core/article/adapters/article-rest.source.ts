@@ -6,10 +6,10 @@ import { Article, ArticleId, RawArticle } from "../domain/article.entity";
 
 @Injectable()
 export class ArticleRestSource implements ArticleSource {
-  private readonly baseUrl =
-    "https://my-json-server.typicode.com/amirault/angular5-articles-app";
-
-  constructor(private http: HttpClient) {}
+  constructor(
+    private readonly http: HttpClient,
+    private readonly baseUrl: string
+  ) {}
 
   public create(newArticle: RawArticle): Observable<Article> {
     return this.http.post<Article>(`${this.baseUrl}/articles/`, newArticle);
