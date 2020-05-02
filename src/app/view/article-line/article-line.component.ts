@@ -20,13 +20,13 @@ export class ArticleLineComponent implements OnInit {
     this.route.params.subscribe((params) => {
       if (isArticleId(params)) {
         this.articleUseCases
-          .read(params.id)
+          .read(Number(params.id))
           .subscribe((_) => (this.article = _));
       }
     });
   }
 }
 
-function isArticleId(params: Params): params is { id: number } {
-  return params && "id" in params && typeof params["id"] === "number";
+function isArticleId(params: Params): params is { id: string } {
+  return params && "id" in params && typeof params["id"] === "string";
 }

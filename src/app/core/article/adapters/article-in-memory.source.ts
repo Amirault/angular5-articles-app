@@ -11,7 +11,7 @@ export class ArticleInMemorySource implements ArticleSource {
 
   public create(rawArticle: RawArticle): Observable<Article> {
     const newArticle = {
-      id: this.articles.length - 1,
+      id: this.articles.length,
       ...rawArticle,
     };
     this.articles.push(newArticle);
