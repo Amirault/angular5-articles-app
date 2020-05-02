@@ -16,8 +16,6 @@ export class ArticleListComponent implements OnInit {
   }
 
   delete({ id }: Article) {
-    this.articleUseCases.delete(id).subscribe(() => {
-      this.articleUseCases.readAll().subscribe((_) => (this.articles = _));
-    });
+    this.articleUseCases.delete(id).subscribe((_) => (this.articles = _));
   }
 }

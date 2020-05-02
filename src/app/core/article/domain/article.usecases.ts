@@ -1,6 +1,7 @@
 import { Article, ArticleId, RawArticle, toArticleId } from "./article.entity";
 import { Observable, of } from "rxjs";
 import { ArticleSource } from "./article.source";
+import { flatMap } from "rxjs/operators";
 
 export class ArticleUseCases {
   constructor(private readonly articleSource: ArticleSource) {}
@@ -18,7 +19,7 @@ export class ArticleUseCases {
     return this.articleSource.readAll();
   }
 
-  public delete(id: ArticleId): Observable<any> {
-    return this.articleSource.delete(id);
+  public delete(id: ArticleId): Observable<Article[]> {
+    return this.articleSource.delete(id).pipe(flatMap(() => this.readAll()));
   }
 }
