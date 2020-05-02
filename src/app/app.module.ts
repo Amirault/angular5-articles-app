@@ -43,7 +43,7 @@ const appRoutes: Routes = [
       provide: ArticleUseCases,
       useFactory: (httpClient: HttpClient) => {
         return new ArticleUseCases(
-          !environment.production
+          environment.production
             ? new ArticleRestSource(
                 httpClient,
                 "https://my-json-server.typicode.com/amirault/angular5-articles-app"
