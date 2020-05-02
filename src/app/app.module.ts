@@ -4,7 +4,7 @@ import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { ReactiveFormsModule } from "@angular/forms";
 import { RouterModule, Routes } from "@angular/router";
 
-import { AppComponent } from "./app.component";
+import { AppComponent } from "./view/app/app.component";
 import { ArticleLineComponent } from "./view/article-line/article-line.component";
 import { ArticleListComponent } from "./view/article-list/article-list.component";
 import { ArticleUseCases } from "./core/article/domain/article.usecases";
