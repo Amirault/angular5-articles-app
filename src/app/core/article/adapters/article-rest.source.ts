@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { ArticleSource } from "../domain/article.source";
-import { Article, RawArticle } from "../domain/article.entity";
+import { Article, ArticleId, RawArticle } from "../domain/article.entity";
 
 @Injectable()
 export class ArticleRestSource implements ArticleSource {
@@ -15,7 +15,7 @@ export class ArticleRestSource implements ArticleSource {
     return this.http.post<Article>(`${this.baseUrl}/articles/`, newArticle);
   }
 
-  public read(id: number): Observable<Article> {
+  public read(id: ArticleId): Observable<Article> {
     return this.http.get<Article>(`${this.baseUrl}/articles/${id}`);
   }
 
@@ -23,7 +23,7 @@ export class ArticleRestSource implements ArticleSource {
     return this.http.get<Article[]>(`${this.baseUrl}/articles`);
   }
 
-  public delete(id: number): Observable<any> {
+  public delete(id: ArticleId): Observable<any> {
     return this.http.delete<any>(`${this.baseUrl}/articles/${id}`);
   }
 }

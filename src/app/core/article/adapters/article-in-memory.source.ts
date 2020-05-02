@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Observable, of } from "rxjs";
 import { ArticleSource } from "../domain/article.source";
-import { Article, RawArticle } from "../domain/article.entity";
+import { Article, ArticleId, RawArticle } from "../domain/article.entity";
 
 @Injectable()
 export class ArticleInMemorySource implements ArticleSource {
@@ -11,7 +11,7 @@ export class ArticleInMemorySource implements ArticleSource {
 
   public create(rawArticle: RawArticle): Observable<Article> {
     const newArticle = {
-      id: this.articles.length,
+      id: this.articles.length as ArticleId,
       ...rawArticle,
     };
     this.articles.push(newArticle);

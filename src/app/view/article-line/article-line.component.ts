@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from "@angular/core";
-import { Article } from "../../core/article/domain/article.entity";
-import { ActivatedRoute, Params } from "@angular/router";
+import { Article, toArticleId } from "../../core/article/domain/article.entity";
+import { ActivatedRoute } from "@angular/router";
 import { ArticleUseCases } from "../../core/article/domain/article.usecases";
 
 @Component({
@@ -9,7 +9,7 @@ import { ArticleUseCases } from "../../core/article/domain/article.usecases";
 })
 export class ArticleLineComponent implements OnInit {
   @Input()
-  article: Article;
+  article: Article | undefined;
 
   constructor(
     private route: ActivatedRoute,
@@ -18,15 +18,9 @@ export class ArticleLineComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe((params) => {
-      if (isArticleId(params)) {
-        this.articleUseCases
-          .read(Number(params.id))
-          .subscribe((_) => (this.article = _));
-      }
+      this.articleUseCases
+        .read(params?.id)
+        .subscribe((_) => (this.article = _));
     });
   }
-}
-
-function isArticleId(params: Params): params is { id: string } {
-  return params && "id" in params && typeof params["id"] === "string";
 }
