@@ -31,8 +31,8 @@ export class ArticleInMemorySource implements ArticleSource {
     return of(this.articles);
   }
 
-  public delete(id: number): Observable<any> {
+  public delete(id: number): Observable<void> {
     this.articles = this.articles.filter((_) => _.id !== id);
-    return of(this.articles);
+    return of(undefined);
   }
 }

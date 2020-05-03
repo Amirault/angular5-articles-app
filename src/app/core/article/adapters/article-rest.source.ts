@@ -23,7 +23,7 @@ export class ArticleRestSource implements ArticleSource {
     return this.http.get<Article[]>(`${this.baseUrl}/articles`);
   }
 
-  public delete(id: ArticleId): Observable<any> {
+  public delete(id: ArticleId): Observable<void> {
     return this.http.delete<any>(`${this.baseUrl}/articles/${id}`);
   }
 }
