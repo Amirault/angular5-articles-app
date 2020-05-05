@@ -19,7 +19,7 @@ export class ArticleLineComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe((params) => {
       this.articleUseCases
-        .read(params?.id)
+        .read(params["id"])
         .subscribe((_) => (this.article = _));
     });
   }

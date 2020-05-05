@@ -14,7 +14,7 @@ export class ArticleCreationComponent implements OnInit {
     private articleUseCases: ArticleUseCases
   ) {
     this.articleForm = this.fb.group({
-      title: ["Fake Title", Validators.required],
+      title: ["", Validators.required],
       content: ["", Validators.required],
       authors: ["", Validators.required],
     });
