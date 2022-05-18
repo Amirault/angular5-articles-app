@@ -20,6 +20,8 @@ export class ArticleUseCases {
   }
 
   public delete(id: ArticleId): Observable<Article[]> {
-    return this.articleSource.delete(id).pipe(mergeMap(this.readAll));
+    return this.articleSource
+      .delete(id)
+      .pipe(mergeMap(this.articleSource.readAll));
   }
 }
